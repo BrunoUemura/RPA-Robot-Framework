@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.1 on win32)" generated="20200909 22:37:23.613" rpa="false">
+<suite id="s1" name="Teste TestSuite" source="C:\Users\PICHAU\Google Drive\Engenharia da Computação\8º Semestre\Tópicos em Linguagem de Programação\RPA Robot Framework\Ex_ecommerce\TestSuite\Teste_TestSuite.robot">
+<test id="s1-t1" name="Test title">
+<kw name="Login Ecommerce" library="Teste_Keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${STORELURL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--incognito")</arg>
+</arguments>
+<msg timestamp="20200909 22:37:23.845" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20200909 22:37:23.845" endtime="20200909 22:37:31.457"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200909 22:37:31.457" endtime="20200909 22:37:33.601"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${STORELURL}</arg>
+</arguments>
+<msg timestamp="20200909 22:37:33.601" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20200909 22:37:33.601" endtime="20200909 22:37:34.901"></status>
+</kw>
+<status status="PASS" starttime="20200909 22:37:23.844" endtime="20200909 22:37:34.901"></status>
+</kw>
+<kw name="Escolhe Produto" library="Teste_Keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${BUSCASITE}</arg>
+<arg>timeout=60.0</arg>
+</arguments>
+<status status="PASS" starttime="20200909 22:37:34.902" endtime="20200909 22:37:34.933"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BUSCASITE}</arg>
+</arguments>
+<msg timestamp="20200909 22:37:34.934" level="INFO">Clicking element '//*[@src="http://automationpractice.com/img/p/1/1-home_default.jpg"]'.</msg>
+<status status="PASS" starttime="20200909 22:37:34.933" endtime="20200909 22:37:36.091"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ADDCARRINHO}</arg>
+<arg>timeout=60.0</arg>
+</arguments>
+<status status="PASS" starttime="20200909 22:37:36.091" endtime="20200909 22:37:36.959"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ADDCARRINHO}</arg>
+</arguments>
+<msg timestamp="20200909 22:37:36.960" level="INFO">Clicking element '//*[@name="Submit"]'.</msg>
+<status status="PASS" starttime="20200909 22:37:36.959" endtime="20200909 22:37:36.999"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20200909 22:37:42.013" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200909 22:37:36.999" endtime="20200909 22:37:42.013"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${PROCEED}</arg>
+</arguments>
+<msg timestamp="20200909 22:37:42.013" level="INFO">Clicking element '//*[@class="btn btn-default button button-medium"]'.</msg>
+<status status="PASS" starttime="20200909 22:37:42.013" endtime="20200909 22:37:43.550"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${PROCEED}</arg>
+<arg>timeout=60.0</arg>
+</arguments>
+<status status="PASS" starttime="20200909 22:37:43.550" endtime="20200909 22:37:43.558"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${PLUSBTN}</arg>
+</arguments>
+<msg timestamp="20200909 22:37:43.558" level="INFO">Clicking element '//*[@title="Add"]'.</msg>
+<status status="PASS" starttime="20200909 22:37:43.558" endtime="20200909 22:37:43.607"></status>
+</kw>
+<status status="PASS" starttime="20200909 22:37:34.902" endtime="20200909 22:37:43.607"></status>
+</kw>
+<kw name="Verifica Saldo" library="Teste_Keywords">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Verifica Valor Total da Compra</arg>
+</arguments>
+<assign>
+<var>${VERIFICAVALORTOTAL}</var>
+</assign>
+<kw name="Verifica Valor Total da Compra" library="Teste_Keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LIXEIRACOMPRA}</arg>
+<arg>timeout=60.0</arg>
+</arguments>
+<status status="PASS" starttime="20200909 22:37:43.609" endtime="20200909 22:37:43.619"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${VALORTOTALCOMPRA}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200909 22:37:43.993" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200909 22:37:43.639" endtime="20200909 22:37:43.993"></status>
+</kw>
+<msg timestamp="20200909 22:37:43.995" level="FAIL">Page should have contained element '//*[@id="total_price"]//..//*[contains(text(),'$35.02')]' but did not.</msg>
+<status status="FAIL" starttime="20200909 22:37:43.619" endtime="20200909 22:37:43.995"></status>
+</kw>
+<status status="FAIL" starttime="20200909 22:37:43.609" endtime="20200909 22:37:43.995"></status>
+</kw>
+<msg timestamp="20200909 22:37:43.996" level="INFO">${VERIFICAVALORTOTAL} = False</msg>
+<status status="PASS" starttime="20200909 22:37:43.608" endtime="20200909 22:37:43.996"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VERIFICAVALORTOTAL}'=='True'</arg>
+<arg>Run Keywords</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>AND</arg>
+<arg>Log To Console</arg>
+<arg>Saldo Suficiente!</arg>
+<arg>ELSE</arg>
+<arg>Run Keywords</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>AND</arg>
+<arg>Log To Console</arg>
+<arg>Saldo Insuficiente!</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Capture Page Screenshot</arg>
+<arg>AND</arg>
+<arg>Log To Console</arg>
+<arg>Saldo Insuficiente!</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200909 22:37:44.321" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200909 22:37:43.996" endtime="20200909 22:37:44.321"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Saldo Insuficiente!</arg>
+</arguments>
+<status status="PASS" starttime="20200909 22:37:44.321" endtime="20200909 22:37:44.322"></status>
+</kw>
+<status status="PASS" starttime="20200909 22:37:43.996" endtime="20200909 22:37:44.322"></status>
+</kw>
+<status status="PASS" starttime="20200909 22:37:43.996" endtime="20200909 22:37:44.322"></status>
+</kw>
+<status status="PASS" starttime="20200909 22:37:43.608" endtime="20200909 22:37:44.322"></status>
+</kw>
+<kw name="Verifica Valor Total da Compra" library="Teste_Keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LIXEIRACOMPRA}</arg>
+<arg>timeout=60.0</arg>
+</arguments>
+<status status="PASS" starttime="20200909 22:37:44.323" endtime="20200909 22:37:44.330"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${VALORTOTALCOMPRA}</arg>
+</arguments>
+<msg timestamp="20200909 22:37:44.336" level="INFO">Current page contains element '//*[@id="total_price"]//..//*[contains(text(),'$35.02')]'.</msg>
+<status status="PASS" starttime="20200909 22:37:44.330" endtime="20200909 22:37:44.336"></status>
+</kw>
+<status status="PASS" starttime="20200909 22:37:44.322" endtime="20200909 22:37:44.336"></status>
+</kw>
+<kw name="Finaliza Pedido" library="Teste_Keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${PROCEED2}</arg>
+</arguments>
+<msg timestamp="20200909 22:37:44.337" level="INFO">Clicking element '//*[@class="button btn btn-default standard-checkout button-medium"]'.</msg>
+<status status="PASS" starttime="20200909 22:37:44.337" endtime="20200909 22:37:46.507"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${SIGNINBTN}</arg>
+<arg>timeout=60.0</arg>
+</arguments>
+<status status="PASS" starttime="20200909 22:37:46.507" endtime="20200909 22:37:46.519"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200909 22:37:46.877" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200909 22:37:46.519" endtime="20200909 22:37:46.877"></status>
+</kw>
+<status status="PASS" starttime="20200909 22:37:44.337" endtime="20200909 22:37:46.877"></status>
+</kw>
+<tags>
+<tag>Teste1</tag>
+</tags>
+<status status="PASS" starttime="20200909 22:37:23.844" endtime="20200909 22:37:46.877" critical="yes"></status>
+</test>
+<doc>Suite description</doc>
+<status status="PASS" starttime="20200909 22:37:23.615" endtime="20200909 22:37:46.879"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Teste1</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Teste TestSuite">Teste TestSuite</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200909 22:37:23.838" level="ERROR">Error in file 'C:\Users\PICHAU\Google Drive\Engenharia da Computação\8º Semestre\Tópicos em Linguagem de Programação\RPA Robot Framework\Ex_ecommerce\Functions\Teste_Keywords.robot' on line 4: Error in file 'C:\Users\PICHAU\Google Drive\Engenharia da Computação\8º Semestre\Tópicos em Linguagem de Programação\RPA Robot Framework\Ex_ecommerce\TestSuite\Teste_TestSuite.robot' on line 8: Resource file with 'Test Cases' section is invalid.</msg>
+<msg timestamp="20200909 22:37:23.840" level="ERROR">Error in file 'C:\Users\PICHAU\Google Drive\Engenharia da Computação\8º Semestre\Tópicos em Linguagem de Programação\RPA Robot Framework\Ex_ecommerce\Functions\Teste_Keywords.robot' on line 5: Resource file '..\Functions\Teste_InputData.robot' does not exist.</msg>
+<msg timestamp="20200909 22:37:23.841" level="WARN">Imported resource file 'C:\Users\PICHAU\Google Drive\Engenharia da Computação\8º Semestre\Tópicos em Linguagem de Programação\RPA Robot Framework\Ex_ecommerce\PageObjects\Teste_InputData.robot' is empty.</msg>
+</errors>
+</robot>

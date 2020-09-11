@@ -1,0 +1,8 @@
+http://automationpractice.com/index.php
+
+1) log in page (ultimo link acima)
+2) Escolher um produto e adicionar no carrinho (add to cart) - primeiro item 16.51
+3) clicar em proximo (Proceed to checkout)
+4) verifica valor total = 35.02
+5) se correto tira um print e escreve no console "saldo suficiente"
+senao tira um print e escreve no console "saldo insuficiente"
